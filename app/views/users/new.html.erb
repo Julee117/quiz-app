@@ -4,6 +4,7 @@
   </div>
   <div>
     <%= form_for @user do |f| %>
+    <%= render partial: "layouts/errors", locals: { data: @user } %>
       <div>
         <%= f.text_field :first_name, placeholder: "First Name" %>
       </div>
