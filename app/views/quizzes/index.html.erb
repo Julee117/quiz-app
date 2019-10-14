@@ -1,0 +1,10 @@
+<div>
+  <h1>Quizzes</h1>
+  <div>
+    <% @quizzes.each do |quiz| %>
+      <li>
+        <a href='/quizzes/<%= quiz.id %>'><%= quiz.name %></a>
+      </li>
+    <% end %>
+  </div>
+</div>
