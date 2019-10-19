@@ -1,0 +1,13 @@
+<div>
+  <% quiz = Quiz.find(params[:quiz]) %>
+  <h1><%= quiz.name %></h1>
+  <% @response = current_user.get_user_answers(quiz.id) %>
+  <% @response.each do |question, answer| %>
+    <h4><%= question %></h4>
+    <% if answer.correct? %>
+      <p><%= answer.content %></p>
+    <% else %>
+      <p><%= answer.content %> - Incorrect</p>
+    <% end %>
+  <% end %>
+</div>
