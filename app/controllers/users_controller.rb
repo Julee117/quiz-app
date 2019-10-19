@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def index
+    @user = current_user
+    respond_to do |format|
+      format.html
+      format.json {render json: @user, status: 200}
+    end
+  end
+
   def new
     @user = User.new
   end
@@ -9,7 +17,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
-        format.html { redirect_to users_path }
+        format.html { redirect_to quizzes_path }
         format.json { render json: @user, status: 201 }
       else
         format.html { render :new }
