@@ -1,0 +1,12 @@
+<div class="container">
+  <div class="row">
+  <% @user.scores.each do |score| %>
+    <% quiz = Quiz.find(score.quiz_id) %>
+    <div class="col-md-4">
+      <div class="col-md-12">
+        <h4><%= link_to quiz.name, score_path(score, quiz: quiz) %></h4>
+        <p><%= score.value %>%</p>
+      </div>
+    </div>
+  <% end %>
+</div>
