@@ -12,10 +12,10 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require_tree .
 //= require jquery3
 //= require popper
 //= require bootstrap-sprockets
+//= require_tree .
 
 $(document).on("click", "a.link_to_add_fields", function(e){
     e.preventDefault();
@@ -30,3 +30,9 @@ function add_fields(link, association, content) {
   var regexp = new RegExp("new_" + association, "g")
   $(link).before(content.replace(regexp, new_id));
 }
+
+$(document).on("click", "a.remove_fields", function(e){
+  e.preventDefault();
+  $(this).prev("input[type=hidden]").val("1");
+  $(this).closest(".field").hide();
+})
