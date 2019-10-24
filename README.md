@@ -1,24 +1,14 @@
-# README
+# Quiz App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a quiz app for users to take quizzes.
 
-Things you may want to cover:
+## Getting Started
 
-* Ruby version
+Install Docker and Docker Compose
+Build Docker images:
+`docker-compose build`
 
-* System dependencies
+Run app:
+`docker-compose up`
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Access it at `http://localhost:3000`
