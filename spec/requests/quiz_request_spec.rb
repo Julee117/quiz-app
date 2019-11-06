@@ -118,4 +118,20 @@ RSpec.describe 'Quizzes API', type: :request do
       end
     end
   end
+
+  describe 'PUT /quizzez/:id' do
+    let(:valid_attributes) { { quiz: { name: Faker::Lorem.word} } }
+
+    context 'when the quiz exists' do
+      before { put "/quizzes/#{quiz_id}.json", params: valid_attributes }
+
+      it 'updates the quiz' do
+        expect(json[:name]).to eq(valid_attributes[:quiz][:name])
+      end
+
+      it 'returns status code 200' do
+        expect(response).to have_http_status(200)
+      end
+    end
+  end
 end
